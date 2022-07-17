@@ -17,7 +17,7 @@ class PostClient extends NetworkClient {
     var parsedList = response.data;
 
     // Parsed list to mapped and add to posts list (posts)
-    posts = parsedList.map((e) => Post.fromJson(e)).toList();
+    posts = parsedList.map<Post>((e) => Post.fromJson(e)).toList();
 
     // Return posts list
     return posts;
