@@ -35,8 +35,7 @@ Run App
 
 ## App Video
 
-https://user-images.githubusercontent.com/31064552/179408379-9f9642a6-e8e5-4b95-befd-342b7e8d7916.mp4
-
+https://user-images.githubusercontent.com/31064552/179427810-58a32b3b-2141-4e9b-90ba-0827bb026215.mp4
 
 
 ## Contributing
