@@ -13,32 +13,36 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   // init state
   @override
   void initState() {
-
     // Get posts
     BlocProvider.of<PostBloc>(context).add(GetPostEvent());
 
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home'),),
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
       body: BlocBuilder<PostBloc, PostState>(
         builder: (context, state) {
-          if(state is GetPostState) {
+          if (state is GetPostState) {
             return ListView.builder(
               itemCount: state.posts.length,
-              itemBuilder: (context,index) {
-                return ListTile(title: Text(state.posts[index].title ?? 'No Data'), subtitle: Text(state.posts[index].body ?? 'No Body') ,);
-                },
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(state.posts[index].title ?? 'No Data'),
+                  subtitle: Text(state.posts[index].body ?? 'No Body'),
+                );
+              },
             );
           }
 
-          return Text('No Post');
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );
